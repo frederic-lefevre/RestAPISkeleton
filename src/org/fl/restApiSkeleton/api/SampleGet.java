@@ -59,7 +59,7 @@ public class SampleGet {
 			sampleReturn.addProperty("pathParam", domain);
 			apiReturn.setDataReturn(sampleReturn);
 			
-		}else {
+		} else {
 			// Hmac checking has failed
 			apiReturn.setErrorReturn(ApiErrorCodeBuilder.UNAUTHORIZED_CODE, GET_SAMPLE) ;
 		}
