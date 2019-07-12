@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.PUT;
@@ -49,6 +50,7 @@ public class Logs  {
 	public Response get(@HeaderParam("Authorization") String authorizationHeader,
 			 			@HeaderParam("Device-Id") String deviceId,
 			 			@HeaderParam("Timestamp") String timestamp,
+			 			@DefaultValue("false")
 			 			@QueryParam("compressReturn") boolean compressReturn, 
 			 			@Context UriInfo uriInfo) {
 		// Get latest logs of the application 

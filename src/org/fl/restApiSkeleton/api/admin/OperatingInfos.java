@@ -3,9 +3,11 @@ package org.fl.restApiSkeleton.api.admin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -36,6 +38,8 @@ public class OperatingInfos {
 	public Response get(@HeaderParam("Authorization") String authorizationHeader,
 			 			@HeaderParam("Device-Id") String deviceId,
 			 			@HeaderParam("Timestamp") String timestamp,
+			 			@DefaultValue("false")
+			 			@QueryParam("IpLookUp") boolean ipLookUp,
 			 			@Context UriInfo uriInfo) {
 		// Get latest logs of the application 
 		
@@ -52,7 +56,7 @@ public class OperatingInfos {
 		if (HMACUtils.checkHmacAdmin(authorizationHeader, "GET", uriInfo.getAbsolutePath().getPath(), deviceId, timestamp, gLog)) {
 		// Check Hmac - successful
 
-			JsonObject operatingContext = RestApiSkeletonControl.getRunningContext().getApplicationInfo() ;
+			JsonObject operatingContext = RestApiSkeletonControl.getRunningContext().getApplicationInfo(ipLookUp) ;
 
 			apiReturn.setDataReturn(operatingContext) ;
 		} else {
