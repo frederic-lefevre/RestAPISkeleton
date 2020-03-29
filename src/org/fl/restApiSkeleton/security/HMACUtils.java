@@ -35,21 +35,13 @@ public final class HMACUtils {
 	// Check the HMAC string 
 	public static boolean checkHmac(String hmacReceivedString, String method, String path, String deviceId, String timestamp, Logger hLog) {
 		
-		if (ALGORITHM != null) {
 			return checkHmac(hmacReceivedString, method, path, deviceId, timestamp, CLIENT_ID, ALGORITHM, hLog) ;
-		} else {
-			return true ;
-		}
 	}
 	
 	// Check the HMAC string for admin function
 	public static boolean checkHmacAdmin(String hmacReceivedString, String method, String path, String deviceId, String timestamp, Logger hLog) {
 		
-		if (ALGORITHM_FOR_ADMIN != null) {
 			return checkHmac(hmacReceivedString, method, path, deviceId, timestamp, CLIENT_ID_FOR_ADMIN, ALGORITHM_FOR_ADMIN, hLog) ;
-		} else {
-			return true ;
-		}
 	}
 	
 	// Check the HMAC string for admin function
