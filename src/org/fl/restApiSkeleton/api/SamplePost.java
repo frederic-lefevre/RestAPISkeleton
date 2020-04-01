@@ -100,7 +100,7 @@ public class SamplePost {
 			
 			if (! apiReturn.isOnError()) {
 				// if there has been no error (during compression), send the compressed return 
-				return Response.ok(lineItemsReturn, "application/zip").build() ;
+				return Response.ok(lineItemsReturn, "application/zip").encoding("deflate").build() ;
 			}		
 		} 
 		
