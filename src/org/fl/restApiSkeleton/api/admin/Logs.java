@@ -88,7 +88,7 @@ public class Logs  {
 		if (compressReturn) {
 			byte[] logReturn = apiReturn.getCompressedApiReturn(GET_LOGS) ;
 			if (! apiReturn.isOnError()) {
-				return Response.ok(logReturn, "application/zip").build() ;
+				return Response.ok(logReturn, "application/zip").encoding("deflate").build() ;
 			}		
 		} 
 		
