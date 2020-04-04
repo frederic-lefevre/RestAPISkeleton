@@ -96,7 +96,7 @@ public class SamplePost {
 			// if compression is asked
 			
 			// Get the compressed the API return
-			byte[] lineItemsReturn = apiReturn.getCompressedApiReturn(POST_SAMPLE) ;
+			byte[] lineItemsReturn = apiReturn.getCompressedApiReturn(POST_SAMPLE, ApiReturn.SupportedCompression.GZIP) ;
 			
 			if (! apiReturn.isOnError()) {
 				// if there has been no error (during compression), send the compressed return 
