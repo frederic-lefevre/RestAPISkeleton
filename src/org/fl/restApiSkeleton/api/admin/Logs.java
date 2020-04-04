@@ -24,6 +24,7 @@ import org.fl.restApiSkeleton.RestApiSkeletonControl;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
+import com.ibm.lge.fl.util.CompressionUtils;
 import com.ibm.lge.fl.util.ExecutionDurations;
 import com.ibm.lge.fl.util.api.ApiErrorCodeBuilder;
 import com.ibm.lge.fl.util.api.ApiReturn;
@@ -86,9 +87,9 @@ public class Logs  {
 		}
 
 		if (compressReturn) {
-			byte[] logReturn = apiReturn.getCompressedApiReturn(GET_LOGS, ApiReturn.SupportedCompression.GZIP) ;
+			byte[] logReturn = apiReturn.getCompressedApiReturn(GET_LOGS, CompressionUtils.SupportedCompression.GZIP) ;
 			if (! apiReturn.isOnError()) {
-				return Response.ok(logReturn, "application/zip").encoding("deflate").build() ;
+				return Response.ok(logReturn, "application/zip").encoding("gzip").build() ;
 			}		
 		} 
 		

@@ -20,6 +20,7 @@ import org.fl.restApiSkeleton.security.HMACUtils;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.ibm.lge.fl.util.CompressionUtils;
 import com.ibm.lge.fl.util.ExecutionDurations;
 import com.ibm.lge.fl.util.api.ApiErrorCodeBuilder;
 import com.ibm.lge.fl.util.api.ApiJsonPropertyName;
@@ -96,11 +97,11 @@ public class SamplePost {
 			// if compression is asked
 			
 			// Get the compressed the API return
-			byte[] lineItemsReturn = apiReturn.getCompressedApiReturn(POST_SAMPLE, ApiReturn.SupportedCompression.GZIP) ;
+			byte[] lineItemsReturn = apiReturn.getCompressedApiReturn(POST_SAMPLE, CompressionUtils.SupportedCompression.GZIP) ;
 			
 			if (! apiReturn.isOnError()) {
 				// if there has been no error (during compression), send the compressed return 
-				return Response.ok(lineItemsReturn, "application/zip").encoding("deflate").build() ;
+				return Response.ok(lineItemsReturn, "application/zip").encoding("gzip").build() ;
 			}		
 		} 
 		
