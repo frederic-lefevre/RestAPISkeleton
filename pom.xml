@@ -1,36 +1,34 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestAPISkeleton</groupId>
   <artifactId>RestAPISkeleton</artifactId>
-  <version>1.6.0</version>
+  <version>1.7.0</version>
   <packaging>war</packaging>
   <name>REST API Skeleton</name>
-  
   <properties>
-    <timestamp>${maven.build.timestamp}</timestamp>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss z</maven.build.timestamp.format>  
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss z</maven.build.timestamp.format>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <timestamp>${maven.build.timestamp}</timestamp>
   </properties>
-  
   <dependencies>
-  	<dependency>
-		<groupId>com.google.code.gson</groupId>
-		<artifactId>gson</artifactId>
-		<version>2.8.6</version>
-	</dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.6</version>
+    </dependency>
     <dependency>
       <groupId>org.fl.FlUtils</groupId>
       <artifactId>FlUtils</artifactId>
-      <version>1.8.0</version>
+      <version>1.9.0</version>
     </dependency>
     <dependency>
       <groupId>net.wasdev.maven.tools.targets</groupId>
       <artifactId>liberty-target</artifactId>
-      <version>19.0.0.9</version>
+      <version>20.0.0.3</version>
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
