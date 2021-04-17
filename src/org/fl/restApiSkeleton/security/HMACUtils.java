@@ -64,19 +64,18 @@ public final class HMACUtils {
 	
 	// Sign a string with the secret key and the algorithm
 	private static String sha256hash(String strToHash, String algorithm, Logger hLog) {
-		String hash = "";
+
 	    try {
 	        Mac sha256_HMAC = Mac.getInstance(algorithm);
 	        SecretKeySpec secret_key = new SecretKeySpec(SECRET_KEY_ASBYTES, algorithm);
 	        sha256_HMAC.init(secret_key);
 
-	        hash = base64Encoder.encodeToString(sha256_HMAC.doFinal(strToHash.getBytes()));
-	        if (hLog.isLoggable(Level.FINEST)) {
-	        	hLog.finest("String to hash=" + strToHash + "\n hash result=" + hash);
-	        }
+	        String hash = base64Encoder.encodeToString(sha256_HMAC.doFinal(strToHash.getBytes()));
+	        hLog.finest(() -> "String to hash=" + strToHash + "\n hash result=" + hash);
+	        return hash ;
 	    } catch (Exception e){
 	    	hLog.log(Level.SEVERE, "Exception when hashing the string " + strToHash , e);
+	    	return "" ;
 	    }
-	    return hash;
 	}
 }
