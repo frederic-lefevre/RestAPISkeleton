@@ -23,7 +23,7 @@
     <dependency>
       <groupId>org.fl.FlUtils</groupId>
       <artifactId>FlUtils</artifactId>
-      <version>1.9.0</version>
+      <version>1.10.0</version>
     </dependency>
     <dependency>
       <groupId>net.wasdev.maven.tools.targets</groupId>
@@ -47,7 +47,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.8.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
@@ -57,9 +57,9 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>pl.project13.maven</groupId>
-        <artifactId>git-commit-id-plugin</artifactId>
-        <version>3.0.0</version>
+        <groupId>io.github.git-commit-id</groupId>
+		<artifactId>git-commit-id-maven-plugin</artifactId>
+        <version>5.0.0</version>
         <executions>
           <execution>
             <goals>
