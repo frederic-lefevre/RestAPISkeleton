@@ -8,9 +8,9 @@ import java.util.logging.Logger;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.JsonObject;
-import com.ibm.lge.fl.util.AdvancedProperties;
-import com.ibm.lge.fl.util.ExecutionDurations;
-import com.ibm.lge.fl.util.RunningContext;
+import org.fl.util.AdvancedProperties;
+import org.fl.util.ExecutionDurations;
+import org.fl.util.RunningContext;
 
 public class RestApiSkeletonControl {
 

@@ -24,11 +24,11 @@ import org.fl.restApiSkeleton.RestApiSkeletonControl;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import com.ibm.lge.fl.util.CompressionUtils;
-import com.ibm.lge.fl.util.ExecutionDurations;
-import com.ibm.lge.fl.util.api.ApiErrorCodeBuilder;
-import com.ibm.lge.fl.util.api.ApiReturn;
-import com.ibm.lge.fl.util.json.JsonUtils;
+import org.fl.util.CompressionUtils;
+import org.fl.util.ExecutionDurations;
+import org.fl.util.api.ApiErrorCodeBuilder;
+import org.fl.util.api.ApiReturn;
+import org.fl.util.json.JsonUtils;
 
 @Path("/v1/admin/logs")
 public class Logs  {

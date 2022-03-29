@@ -16,9 +16,9 @@ import org.fl.restApiSkeleton.RestApiSkeletonControl;
 import org.fl.restApiSkeleton.security.HMACUtils;
 
 import com.google.gson.JsonObject;
-import com.ibm.lge.fl.util.ExecutionDurations;
-import com.ibm.lge.fl.util.api.ApiErrorCodeBuilder;
-import com.ibm.lge.fl.util.api.ApiReturn;
+import org.fl.util.ExecutionDurations;
+import org.fl.util.api.ApiErrorCodeBuilder;
+import org.fl.util.api.ApiReturn;
 
 @Path("/v1/sampleGet")
 public class SampleGet {
